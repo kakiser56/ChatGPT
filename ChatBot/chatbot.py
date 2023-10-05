@@ -16,6 +16,8 @@ while True:
             model="gpt-3.5-turbo",
             messages = messages
         )
+        messages.append(res["choices"][0]["message"].to_dict())
+
         print('Chat GPT: ' + res["choices"][0]["message"]["content"])
     except KeyboardInterrupt:
         print('Exiting')
